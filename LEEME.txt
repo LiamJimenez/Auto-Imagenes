@@ -1,0 +1,1 @@
+AUTO IMÁGENES · GRUPO ALTERRA IT`r`n`r`nExtrae esta carpeta y abre index.html en el navegador.`r`nElige una carpeta completa o archivos individuales; la página detecta extensiones y permite descargar las filas como TXT.`r`nBootstrap se carga desde Internet, por lo que se requiere conexión para conservar el diseño.
