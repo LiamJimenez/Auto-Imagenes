@@ -1,67 +1,168 @@
 <!doctype html>
 <html lang="es">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#101b31">
-  <title>IT · Grupo Alterra</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="app.css" rel="stylesheet">
-</head>
-<body>
-  <nav class="navbar navbar-dark"><div class="container">
-    <div class="navbar-brand d-flex align-items-center gap-2"><span class="brand-mark">A</span><span>GRUPO ALTERRA <span class="brand-light">/ IT</span></span></div>
-  </div></nav>
-  <main class="container py-5">
-    <section class="hero mb-4"><div class="hero-copy">
-      <div class="eyebrow"><span class="eyebrow-dot"></span>HERRAMIENTA INTERNA · IT</div>
-      <h1>Generador de<br><span>enlaces de imágenes.</span></h1>
-    </div><div class="hero-art" aria-hidden="true">
-      <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
-      <div class="art-card card-back">.jpg</div>
-      <div class="art-card card-front"></div>
-      <div class="art-spark spark-one">✦</div><div class="art-spark spark-two">✳</div>
-    </div></section>
-    <section class="workspace-card">
-      <div class="step-heading"><span class="step-number">01</span><div><h2>Carpeta de imágenes</h2></div></div>
-      <div class="dropzone">
-        <input id="folderInput" type="file" webkitdirectory directory multiple accept="image/*,.jpg,.jpeg,.png,.webp,.gif,.bmp,.tif,.tiff">
-        <input id="fileInput" type="file" multiple accept="image/*,.jpg,.jpeg,.png,.webp,.gif,.bmp,.tif,.tiff">
-        <span class="upload-icon">↥</span><strong>Selecciona imágenes</strong>
-        <span class="drop-hint">Elige una carpeta completa o archivos individuales.</span>
-        <div class="selection-actions">
-          <button id="chooseFolder" type="button" class="btn btn-primary browse-btn">Elegir carpeta</button>
-          <button id="chooseFiles" type="button" class="btn btn-outline-secondary browse-btn">Elegir archivos</button>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#101b31">
+    <title>IT · Grupo Alterra</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    >
+    <link href="app.css" rel="stylesheet">
+  </head>
+  <body>
+    <nav class="navbar navbar-dark">
+      <div class="container">
+        <div class="navbar-brand d-flex align-items-center gap-2">
+          <span class="brand-mark">A</span>
+          <span>GRUPO ALTERRA <span class="brand-light">/ IT</span></span>
         </div>
       </div>
-      <div class="selection-status">
-        <div id="folderName" class="folder-name d-none"></div>
-        <button id="clearSelection" type="button" class="btn btn-sm btn-link d-none">Limpiar selección</button>
-      </div>
-      <div class="step-heading settings-heading"><span class="step-number">02</span><div><h2>URL base</h2></div></div>
-      <div class="input-group input-group-lg"><span class="input-group-text">↗</span>
-        <input id="baseUrl" aria-label="URL base" class="form-control" value="https://grupoalterra.com/Imagenes-Ecommercce-Supermix" spellcheck="false">
-      </div>
-      <div class="cpanel-panel mt-4">
-        <div class="d-flex justify-content-between align-items-start flex-wrap gap-3">
-          <div><h2 class="cpanel-title">Subida a cPanel</h2><p class="cpanel-copy">Inicia sesión en cPanel y carga las imágenes en la carpeta de ecommerce.</p></div>
-          <a id="cpanelOpen" class="btn btn-primary cpanel-open" href="https://impactoferretero.com:2083/frontend/jupiter/filemanager/upload-ajax.html?dir=%2Fhome%2Fimpactoferretero%2Fpublic_html%2Fgrupoalterra.com%2FImagenes-Ecommercce-Supermix" target="_blank" rel="noopener">Abrir cargador de cPanel ↗</a>
+    </nav>
+
+    <main class="container py-5">
+      <section class="hero mb-4">
+        <div class="hero-copy">
+          <div class="eyebrow">
+            <span class="eyebrow-dot"></span>
+            HERRAMIENTA INTERNA · IT
+          </div>
+          <h1>Generador de<br><span>enlaces de imágenes.</span></h1>
         </div>
-        <p class="cpanel-copy mt-3 mb-0">La ventana abre el cargador oficial de cPanel. Si solicita acceso, inicia sesión allí; después podrás elegir archivos en la carpeta correcta.</p>
-      </div>
-      <div id="message" class="alert d-none mt-4 mb-0" role="status"></div>
-      <section id="results" class="results d-none">
-        <div class="results-head"><div><div class="eyebrow">VISTA PREVIA</div><h2><span id="rowCount">0</span> imágenes</h2></div>
-          <div class="d-flex gap-2 flex-wrap"><button id="copyBtn" class="btn btn-outline-secondary">Copiar</button><button id="downloadBtn" class="btn btn-primary">Descargar TXT ↓</button></div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="orbit orbit-one"></div>
+          <div class="orbit orbit-two"></div>
+          <div class="art-card card-back">.jpg</div>
+          <div class="art-card card-front"></div>
+          <div class="art-spark spark-one">✦</div>
+          <div class="art-spark spark-two">✳</div>
         </div>
-        <div class="table-wrap"><table class="table align-middle mb-0"><thead><tr><th>CÓDIGO</th><th>ENLACE</th><th>ARCHIVO</th></tr></thead><tbody id="previewRows"></tbody></table></div>
-        <div class="results-foot"><span id="skipNote"></span><span>Columnas separadas por tabuladores</span></div>
       </section>
-    </section>
-    <footer class="app-footer"><span>Grupo Alterra · IT</span><span>Procesamiento local en el navegador</span></footer>
-  </main>
-  <script src="app.js"></script>
-</body>
+
+      <section class="workspace-card">
+        <div class="step-heading">
+          <span class="step-number">01</span>
+          <div>
+            <h2>Carpeta de imágenes</h2>
+          </div>
+        </div>
+
+        <div class="dropzone">
+          <input
+            id="folderInput"
+            type="file"
+            webkitdirectory
+            directory
+            multiple
+            accept="image/*,.jpg,.jpeg,.png,.webp,.gif,.bmp,.tif,.tiff"
+          >
+          <input
+            id="fileInput"
+            type="file"
+            multiple
+            accept="image/*,.jpg,.jpeg,.png,.webp,.gif,.bmp,.tif,.tiff"
+          >
+          <span class="upload-icon">↥</span>
+          <strong>Selecciona imágenes</strong>
+          <span class="drop-hint">Elige una carpeta completa o archivos individuales.</span>
+          <div class="selection-actions">
+            <button id="chooseFolder" type="button" class="btn btn-primary browse-btn">
+              Elegir carpeta
+            </button>
+            <button id="chooseFiles" type="button" class="btn btn-outline-secondary browse-btn">
+              Elegir archivos
+            </button>
+          </div>
+        </div>
+
+        <div class="selection-status">
+          <div id="folderName" class="folder-name d-none"></div>
+          <button id="clearSelection" type="button" class="btn btn-sm btn-link d-none">
+            Limpiar selección
+          </button>
+        </div>
+
+        <div class="step-heading settings-heading">
+          <span class="step-number">02</span>
+          <div>
+            <h2>URL base</h2>
+          </div>
+        </div>
+        <div class="input-group input-group-lg">
+          <span class="input-group-text">↗</span>
+          <input
+            id="baseUrl"
+            aria-label="URL base"
+            class="form-control"
+            value="https://grupoalterra.com/Imagenes-Ecommercce-Supermix"
+            spellcheck="false"
+          >
+        </div>
+
+        <div class="cpanel-panel mt-4">
+          <div class="d-flex justify-content-between align-items-start flex-wrap gap-3">
+            <div>
+              <h2 class="cpanel-title">Subida a cPanel</h2>
+              <p class="cpanel-copy">
+                Inicia sesión en cPanel y carga las imágenes en la carpeta de ecommerce.
+              </p>
+            </div>
+            <a
+              id="cpanelOpen"
+              class="btn btn-primary cpanel-open"
+              href="https://impactoferretero.com:2083/frontend/jupiter/filemanager/upload-ajax.html?dir=%2Fhome%2Fimpactoferretero%2Fpublic_html%2Fgrupoalterra.com%2FImagenes-Ecommercce-Supermix"
+              target="_blank"
+              rel="noopener"
+            >
+              Abrir cargador de cPanel ↗
+            </a>
+          </div>
+          <p class="cpanel-copy mt-3 mb-0">
+            La ventana abre el cargador oficial de cPanel. Si solicita acceso, inicia sesión allí;
+            después podrás elegir archivos en la carpeta correcta.
+          </p>
+        </div>
+
+        <div id="message" class="alert d-none mt-4 mb-0" role="status"></div>
+
+        <section id="results" class="results d-none">
+          <div class="results-head">
+            <div>
+              <div class="eyebrow">VISTA PREVIA</div>
+              <h2><span id="rowCount">0</span> imágenes</h2>
+            </div>
+            <div class="d-flex gap-2 flex-wrap">
+              <button id="copyBtn" class="btn btn-outline-secondary">Copiar</button>
+              <button id="downloadBtn" class="btn btn-primary">Descargar TXT ↓</button>
+            </div>
+          </div>
+
+          <div class="table-wrap">
+            <table class="table align-middle mb-0">
+              <thead>
+                <tr>
+                  <th>CÓDIGO</th>
+                  <th>ENLACE</th>
+                  <th>ARCHIVO</th>
+                </tr>
+              </thead>
+              <tbody id="previewRows"></tbody>
+            </table>
+          </div>
+          <div class="results-foot">
+            <span id="skipNote"></span>
+            <span>Columnas separadas por tabuladores</span>
+          </div>
+        </section>
+      </section>
+
+      <footer class="app-footer">
+        <span>Grupo Alterra · IT</span>
+        <span>Procesamiento local en el navegador</span>
+      </footer>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
 </html>
-
-
