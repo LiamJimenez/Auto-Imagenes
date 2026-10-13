@@ -12,16 +12,23 @@
     <link href="app.css" rel="stylesheet">
   </head>
   <body>
+    <!-- Barra superior -->
     <nav class="navbar navbar-dark">
       <div class="container">
         <div class="navbar-brand d-flex align-items-center gap-2">
           <span class="brand-mark">A</span>
           <span>GRUPO ALTERRA <span class="brand-light">/ IT</span></span>
         </div>
+        <button id="themeToggle" class="theme-toggle" type="button" aria-label="Activar modo oscuro" aria-pressed="false">
+          <span class="theme-icon" aria-hidden="true">☾</span>
+          <span class="theme-label">Modo oscuro</span>
+        </button>
       </div>
     </nav>
 
+    <!-- Contenido principal -->
     <main class="container py-5">
+      <!-- Presentación -->
       <section class="hero mb-4">
         <div class="hero-copy">
           <div class="eyebrow">
@@ -40,6 +47,7 @@
         </div>
       </section>
 
+      <!-- Flujo de selección, generación y carga -->
       <section class="workspace-card">
         <div class="step-heading">
           <span class="step-number">01</span>
@@ -65,7 +73,7 @@
           >
           <span class="upload-icon">↥</span>
           <strong>Selecciona imágenes</strong>
-          <span class="drop-hint">Elige una carpeta completa o archivos individuales.</span>
+          <span class="drop-hint">Arrastra aquí una carpeta o archivos, o selecciónalos con los botones.</span>
           <div class="selection-actions">
             <button id="chooseFolder" type="button" class="btn btn-primary browse-btn">
               Elegir carpeta
@@ -83,6 +91,7 @@
           </button>
         </div>
 
+        <!-- Configuración de URL base -->
         <div class="step-heading settings-heading">
           <span class="step-number">02</span>
           <div>
@@ -100,6 +109,7 @@
           >
         </div>
 
+        <!-- Mensajes y resultados generados -->
         <div id="message" class="alert d-none mt-4 mb-0" role="status"></div>
 
         <section id="results" class="results d-none">
@@ -132,6 +142,7 @@
           </div>
         </section>
 
+        <!-- Acceso al cargador de cPanel -->
         <div class="cpanel-panel mt-4">
           <div class="d-flex justify-content-between align-items-start flex-wrap gap-3">
             <div>
@@ -157,12 +168,13 @@
         </div>
       </section>
 
+      <!-- Pie de página -->
       <footer class="app-footer">
         <span>Grupo Alterra · IT</span>
         <span>Procesamiento local en el navegador</span>
       </footer>
     </main>
 
-    <script src="app.js"></script>
+    <script src="app.js" defer></script>
   </body>
 </html>
