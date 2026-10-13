@@ -44,18 +44,10 @@
       </div>
       <div class="cpanel-panel mt-4">
         <div class="d-flex justify-content-between align-items-start flex-wrap gap-3">
-          <div><h2 class="cpanel-title">Subida a cPanel</h2><p class="cpanel-copy">Carga las mismas imágenes con su código y extensión.</p></div>
-          <a class="btn btn-outline-secondary cpanel-open" href="https://impactoferretero.com:2083/frontend/jupiter/filemanager/upload-ajax.html?dir=%2Fhome%2Fimpactoferretero%2Fpublic_html%2Fgrupoalterra.com%2FImagenes-Ecommercce-Supermix" target="_blank" rel="noopener">Abrir carpeta en cPanel ↗</a>
+          <div><h2 class="cpanel-title">Subida a cPanel</h2><p class="cpanel-copy">Inicia sesión en cPanel y carga las imágenes en la carpeta de ecommerce.</p></div>
+          <a id="cpanelOpen" class="btn btn-primary cpanel-open" href="https://impactoferretero.com:2083/frontend/jupiter/filemanager/upload-ajax.html?dir=%2Fhome%2Fimpactoferretero%2Fpublic_html%2Fgrupoalterra.com%2FImagenes-Ecommercce-Supermix" target="_blank" rel="noopener">Abrir cargador de cPanel ↗</a>
         </div>
-        <div class="row g-3 mt-1">
-          <div class="col-md-4"><label class="form-label" for="cpanelUser">Usuario cPanel</label><input id="cpanelUser" class="form-control" autocomplete="username" placeholder="Usuario de cPanel"></div>
-          <div class="col-md-8"><label class="form-label" for="cpanelToken">Token API de cPanel</label><input id="cpanelToken" type="password" class="form-control" autocomplete="off" placeholder="Pega tu token de cPanel"></div>
-        </div>
-        <div class="credential-actions mt-3 d-flex justify-content-between align-items-center flex-wrap gap-2">
-          <span id="credentialStatus" class="credential-status">Las credenciales se guardan en este navegador.</span>
-          <button id="forgetCredentials" type="button" class="btn btn-sm btn-link">Borrar credenciales guardadas</button>
-        </div>
-        <div class="mt-3 d-flex justify-content-end"><button id="uploadBtn" type="button" class="btn btn-primary" disabled>Subir imágenes a cPanel ↑</button></div>
+        <p class="cpanel-copy mt-3 mb-0">La ventana abre el cargador oficial de cPanel. Si solicita acceso, inicia sesión allí; después podrás elegir archivos en la carpeta correcta.</p>
       </div>
       <div id="message" class="alert d-none mt-4 mb-0" role="status"></div>
       <section id="results" class="results d-none">

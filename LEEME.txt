@@ -4,13 +4,10 @@ INICIO
 1. Ejecuta iniciar_local.bat y deja abierta la ventana negra.
 2. Se abrirá en el navegador http://127.0.0.1:8765 (si no, copia esa dirección).
 3. Selecciona una carpeta o archivos de imagen. El TXT conserva el formato de tres columnas separadas por tabuladores.
-4. Escribe tu usuario de cPanel y pega el API token, luego pulsa «Subir imágenes a cPanel».
-5. Descarga el TXT como siempre. «Abrir carpeta en cPanel» abre el administrador de archivos para la carpeta destino.
+4. Pulsa «Abrir cargador de cPanel». Se abrirá una ventana pequeña en la carpeta destino; inicia sesión en cPanel si te lo pide y luego usa su selector para cargar los archivos.
+5. Descarga el TXT como siempre.
 
-La carga envía los archivos con el nombre de código más extensión detectada (por ejemplo, 1108.webp), para que coincidan con las URLs del TXT. Los archivos sin código numérico inicial se excluyen.
-
-TOKEN
-Crea en cPanel un API token con permiso suficiente para cargar archivos (Fileman upload_files / File Storage). El usuario y token se guardan en el almacenamiento local del navegador (localStorage) para que aparezcan la próxima vez. No se guardan en archivos del proyecto. Usa «Borrar credenciales guardadas» para quitarlos del navegador. Como el token queda guardado localmente, úsalo solo en tu perfil de Windows y revócalo en cPanel cuando ya no lo necesites.
+Las imágenes con código numérico al inicio de su nombre se incluyen en la vista previa y en el TXT. La carga se realiza directamente en cPanel y sus reglas de nombres y sobrescritura se controlan allí.
 
 REQUISITOS
-Windows con Python 3 instalado y conexión a internet. No uses index.html con doble clic para cargar archivos; abre la dirección local después de ejecutar iniciar_local.bat. La página publicada en Cloudflare puede seguir generando el TXT, pero la integración de carga requiere este servidor local.
+Windows con Python 3 instalado y conexión a internet. Ejecuta iniciar_local.bat para abrir la herramienta. La ventana emergente de cPanel debe permitirse en el navegador.
